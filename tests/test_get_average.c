@@ -1,4 +1,12 @@
 #include "munit.h"
+// void test_loop(void *arg) {
+//   long n = *(long *)arg;
+//
+//   volatile long long sum = 0;
+//   for (long i = 0; i < n; i++) {
+//     sum += i;
+//   }
+// }
 
 float get_average(int x, int y, int z) { return (x + y + z) / 3.0f; }
 

@@ -1,6 +1,5 @@
 #include "memory_helpers.h"
 #include <inttypes.h>
-#include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
 
@@ -18,3 +17,5 @@ void print_sizes() {
 void print_mem_addr(uintptr_t p) {
   printf("Decimal address: %" PRIuPTR "\n", p);
 }
+
+bool is_mem_loc_eq(void *mem1, void *mem2) { return mem1 == mem2; }
