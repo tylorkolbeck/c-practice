@@ -2,10 +2,25 @@
 #include <stdio.h>
 #include <string.h>
 
-void concat_strings(char *str1, char *str2) {
-  int str1_last_index = find_last_index(str1);
-  printf("End of string using strlen: %llu\n", strlen(str1));
-  printf("String 1 last index: %d", str1_last_index);
+// Takes a reference to a buffer and another string and concates the second
+// string to the buffer. The buffer is assumed to be large enough to fit the
+// appended text.
+void concat_strings(char *str1, const char *str2) {
+
+  char *dst = str1;
+
+  while (*dst != '\0') {
+    dst++;
+  }
+
+  const char *src = str2;
+  while (*src != '\0') {
+    *dst = *src;
+    dst++;
+    src++;
+  }
+
+  *dst = '\0';
 }
 
 int find_last_index(char *str) { return strlen(str); }
