@@ -1,4 +1,5 @@
 #include "t_string.h"
+#include <stdio.h>
 #include <string.h>
 
 /*
@@ -24,7 +25,6 @@
  *  to illustrate pointer iteration and in-place string manupulation.
  */
 void concat_strings(char *str1, const char *str2) {
-
   char *dst = str1;
 
   while (*dst != '\0') {
@@ -61,7 +61,25 @@ void concat_strings(char *str1, const char *str2) {
  *   - An empty string or a 1-character string remains unchanged.
  */
 void reverse_string(char *str) {
-  // TODO: implement
+  char *end = str;
+
+  while (*end != '\0') {
+    end++;
+  }
+
+  end--;
+
+  // If end and start are the same then that means only one char passed
+  if (str == end || *str == '\0') {
+    return;
+  }
+  while (str != end) {
+    char temp = *str;
+    *str = *end;
+    *end = temp;
+    str++;
+    end--;
+  }
 }
 
 /*
