@@ -1,12 +1,15 @@
+#include "coordinate/coordinate.h"
 #include "memory_helpers.h"
+#include "util/t_string.h"
 #include <stdbool.h>
 #include <stdio.h>
 
 int main() {
-  int numbers[5] = {1, 2, 3, 4, 5};
+  char *str1 = "Hello";
+  char *str2 = " world";
 
-  for (int i = 0; i < 5; i++) {
-    printf("Number: %d\n", numbers[i]);
-  }
+  char *newString[100];
+
+  concat_strings(str1, str2);
   return 0;
 }

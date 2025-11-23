@@ -1,0 +1,22 @@
+(int *) some_array - casts the array to a an array of integers
+
+int *points_start = (int *)points;
+
+
+Arrays decay which means that the name becomes just a pointer to the first element
+
+When Arrays decay - when used in expressions containing pointers
+
+int arr[5]
+int *ptr = arr; // arr decays to int*
+int value = *(arr+2) // arr decays to int*
+
+When arrays are passed to functions they decay to a pointer as opposed to passing a struct to a function which is passed by value.
+
+When arrays do not decay:
+- sizeof operator: returns the size of the entire array sizeof(arr)
+- & operator: Taking the address of an array with &arr gives you a pointer to the whole array not just the first element. 
+  - &arr is a pointer to the array type e.g. int (*)[5]
+- intialization: When an array is declared and intitialized, it is fully allocated in memory and does not decay to a pointer. 
+
+

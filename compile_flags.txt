@@ -1,5 +1,11 @@
 -Iincludes
 -Iincludes/munit
+-Isrc/coordinate
 -Isrc/benchmark
+-Isrc/util
 -std=c11
+-Isrc
+-Iincludes
+-Wall
+-Wextra
 

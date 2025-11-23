@@ -3,7 +3,14 @@
 #include <stdint.h>
 #include <stdio.h>
 
+int *intPtr;
+char *charPtr;
+double *doublePtr;
+
 void print_sizes() {
+  printf("Size of int pointer: %zu bytes\n", sizeof(intPtr));
+  printf("Size of char pointer: %zu bytes\n", sizeof(charPtr));
+  printf("Size of double pointer: %zu bytes\n", sizeof(doublePtr));
   printf("Size of char*: %zu bytes\n", sizeof(char *));
   printf("Size of double: %zu bytes\n", sizeof(double));
   printf("Size of size_t: %zu bytes\n", sizeof(size_t));
