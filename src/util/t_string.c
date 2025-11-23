@@ -1,5 +1,4 @@
 #include "t_string.h"
-#include <stdio.h>
 #include <string.h>
 
 // Takes a reference to a buffer and another string and concates the second
