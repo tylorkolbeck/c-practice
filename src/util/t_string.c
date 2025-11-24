@@ -174,7 +174,16 @@ int max_element(const int *arr, size_t len) {
   if (len < 1) {
     return 0;
   }
-  return 0;
+  const int *end = arr + len;
+  int largest = 0;
+  while (arr != end) {
+    if (*arr > largest) {
+      largest = *arr;
+    }
+
+    arr++;
+  }
+  return largest;
 }
 
 /*
