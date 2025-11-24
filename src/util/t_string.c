@@ -123,7 +123,12 @@ int count_char(const char *str, char ch) {
  *   - The function must not modify the contents of 'src'.
  */
 void copy_string(char *dest, const char *src) {
-  // TODO: implement
+  while (*src != '\0') {
+    *dest = *src;
+    dest++;
+    src++;
+  }
+  *dest = '\0';
 }
 
 /*
@@ -140,8 +145,15 @@ void copy_string(char *dest, const char *src) {
  *   - Does not modify the array.
  */
 int sum_array(const int *arr, size_t len) {
-  // TODO: implement
-  return 0;
+  const int *end = arr + len;
+
+  int sum = 0;
+  // printf("Address of argccr length + 1: %p", ((char)arr[len + 1]));
+  while (arr != end) {
+    sum = sum + *arr;
+    arr++;
+  }
+  return sum;
 }
 
 /*
@@ -159,7 +171,9 @@ int sum_array(const int *arr, size_t len) {
  *   - Does not modify the array.
  */
 int max_element(const int *arr, size_t len) {
-  // TODO: implement
+  if (len < 1) {
+    return 0;
+  }
   return 0;
 }
 
