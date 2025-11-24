@@ -52,6 +52,18 @@ static MunitResult test_reverse_string_basic(const MunitParameter params[],
   return MUNIT_OK;
 }
 
+static MunitResult test_reverse_string_even(const MunitParameter params[],
+                                            void *data) {
+  (void)params;
+  (void)data;
+
+  char buf[] = "good";
+  reverse_string(buf);
+
+  munit_assert_string_equal(buf, "doog");
+  return MUNIT_OK;
+}
+
 static MunitResult test_reverse_string_empty(const MunitParameter params[],
                                              void *data) {
   (void)params;
@@ -270,6 +282,7 @@ MunitTest string_tests[] = {
     {"/reverse/empty", test_reverse_string_empty, NULL, NULL, 0, NULL},
     {"/reverse/single_char", test_reverse_string_single_char, NULL, NULL, 0,
      NULL},
+    {"/reverse/even", test_reverse_string_even, NULL, NULL, 0, NULL},
 
     {"/count_char/basic", test_count_char_basic, NULL, NULL, 0, NULL},
     {"/count_char/not_found", test_count_char_not_found, NULL, NULL, 0, NULL},

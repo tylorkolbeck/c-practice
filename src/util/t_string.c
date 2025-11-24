@@ -73,7 +73,7 @@ void reverse_string(char *str) {
   if (str == end || *str == '\0') {
     return;
   }
-  while (str != end) {
+  while (str <= end) {
     char temp = *str;
     *str = *end;
     *end = temp;
@@ -98,8 +98,13 @@ void reverse_string(char *str) {
  *   - Returns 0 for an empty string.
  */
 int count_char(const char *str, char ch) {
-  // TODO: implement
-  return 0;
+  int c = 0;
+  while (*str != '\0') {
+    if (*str == ch)
+      c++;
+    str++;
+  }
+  return c;
 }
 
 /*
